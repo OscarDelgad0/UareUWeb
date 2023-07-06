@@ -1,0 +1,122 @@
+<body>
+    <div class="contenedor-app">
+        <div class="contenedor-asistencia">
+            <div class="encabezado-form">
+                <h2>Asistencia</h2>
+                <p>Cerrar</p>
+             </div>
+                <div class="form-asistencia">
+                    <div class="cards-asistencia empleados">
+                        <p>Colinas San Javier</p>
+                        <p>8:30am</p>
+                        <p>Favor de colocar su huella en el sensor dactilar</p>
+                    </div>
+
+                    <div class="cards-asistencia">
+                            <img src="public/build/img/huella.webp" alt="">
+                    </div>
+                        
+                        <div class="card-empleado">
+                                
+                        </div> <!-- card empleado -->
+                        
+                        <div class="card-alerta">
+                            
+                        </div><!-- card empleado -->
+                 </div>
+                
+        </div> <!-- contenedor asistencia -->
+     </div> <!-- contenedor app -->
+
+    
+    <script src="public/build/js/app.js"></script>
+</body>
+
+
+<div class="cards-menu">
+    <a href="Empleados.php">
+        <img src="public/build/img/Personal.png" alt="">
+    </a>
+    <h3>Personal</h3>
+</div>
+
+<div class="cards-menu">
+<a href="Asistencia.php">
+    <img src="public/build/img/reloj.png" alt="">
+</a>
+<h3>Asistencia</h3>
+</div>
+
+<div class="cards-menu">
+<a href="">
+    <img src="public/build/img/huella-dactilar.png" alt="">
+</a>
+<h3>Huella dactilar</h3>
+</div>
+
+<div class="cards-menu">   
+<a href="">
+ <img src="public/build/img/configuraciones.png" alt="">
+</a>
+<h3>Configurar</h3>
+</div>
+
+
+<div class="cards-asistencia asistencia-empleado atiempo visible">
+    <div class="card-empleado-asistencia">
+        <p>Bienvenido(a)</p>
+        <p> estas a tiempo</p>
+        <p>continua asi</p>
+    </div>
+    <div class="card-empleado-asistencia">
+        <img src="public/build/img/comprobado.png" alt="">
+    </div>
+</div> <!-- card empleado -->
+<div class="cards-asistencia asistencia-empleado tarde visible">
+    <div class="card-empleado-asistencia">
+        <p>Bienvenido(a)</p>
+        <p>has llegado tarde</p>
+        <p>hoy no podremos recibirte</p>
+    </div>
+    <div class="card-empleado-asistencia">
+        <img src="public/build/img/cancelar.png" alt="">
+    </div>
+</div> card empleado
+
+
+
+
+<div class="contenedor-grid huella-detector">
+    <div class="opciones-menu">
+        <button>Activar huella dactilar</button>
+
+        <div class="informacion-detector-huella">
+
+            <p>Detectando</p>
+            <p>Ultimo registro:</p>
+            <p class="id"></p>
+            <p>Fecha de registro: </p>
+            <p class="fecha"></p>
+
+        </div>
+    </div>
+
+    <div class="opciones-menu">
+
+    <div class="panel-huella buscar">
+         <p>Selecciona un usuario</p>
+    </div>
+
+    <div class="panel-huella mostrar">
+        <img src="" alt="">
+
+        <div class="informacion">
+            <p>Nombre: </p>
+            <p>Oscar</p>
+            <p>ID: </p>
+            <p>3</p>
+        </div>
+    </div>
+
+    </div>
+</div>

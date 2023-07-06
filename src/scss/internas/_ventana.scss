@@ -1,0 +1,43 @@
+.ventana {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .contenedor-grid {
+        position: relative;
+    }
+    .opciones-menu {
+        width: 80%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 30rem;
+            height: auto;
+        }
+        &.texto-asistencia {
+            align-items: start;
+        }
+    }
+
+    .sensor-data {
+        position: absolute;
+        right: 4rem;
+        bottom: 0;
+    }
+}
+
+
+.visible {
+    display: none;
+}
+
+.detector-hora {
+    
+}

@@ -1,0 +1,51 @@
+@use 'variables' as v;
+@use '../base/mixins' as m;
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+    position: relative;
+}
+.contenedor {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 700px;
+}
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.titulo {
+    font-family: 'Aperto';
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 3rem;
+    margin-bottom: 5rem;
+    font-size: 2rem;
+    letter-spacing: 1rem;
+
+    @include m.tablet(){
+        font-size: 3rem;
+        letter-spacing: 2rem;
+    }
+
+}

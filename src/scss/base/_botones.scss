@@ -1,0 +1,47 @@
+.boton-amarillo {
+    @include boton($amarillo, inline-block);
+    margin: 1rem 0 1rem 0;
+}
+
+.boton-amarillo-block {
+    @include boton($amarillo, block);
+    margin: 1rem 0 1rem 0;
+}
+
+.boton-verde {
+    @include boton($verde, inline-block);
+    margin: 1rem 0 1rem 0;
+}
+
+.boton-rojo-block {
+    @include boton($rojo, block);
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+}
+
+.boton-verde-block {
+    @include boton($verde, block);
+    margin: 1rem 0 1rem 0;
+}
+
+.boton-blanco{
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 30rem;
+    font-size: 2rem;
+    border: solid 1px white;
+    border-radius: 1.6rem;
+    text-decoration: none;
+    color: white;
+    font-family: v.$fuente_principal;
+    transition:  background-color 0.35s ease-in-out;
+    transition: color 0.35s ease-in-out;
+    &:hover{
+        background-color: white;
+        transition: background-color 0.35s ease-in-out;
+        color: black;
+    }
+}

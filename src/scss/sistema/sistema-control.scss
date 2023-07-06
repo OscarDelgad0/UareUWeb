@@ -1,0 +1,23 @@
+.control-asistencia {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-content: center;
+    img {
+        width: 17rem;
+        height: auto;
+    }
+
+    .titulo-menu{
+        margin: 1rem 0;
+        font-size: 0.6rem;
+    }
+}
+
+.dashboard {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(194, 194, 194);
+}
