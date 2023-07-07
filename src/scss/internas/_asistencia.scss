@@ -14,7 +14,19 @@
 
 
 }
-    
+
+.detector-hora{
+    .contenedor-grid {
+        flex: auto;
+        .opciones-menu {
+         
+            p {
+                margin: 1rem;
+            }
+        }
+
+    }
+}
  .asistencia-empleado {
         width: 100%;
         height: 100%;
@@ -31,3 +43,27 @@
     display: none;
 }
 
+.notificacion-asistencia-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 10rem;
+}
+
+.atiempo {
+    margin-right: 0;
+    border: 2px solid green;
+    border-radius: 2rem;
+}
+
+.falta {
+    border: 2px solid red;
+    border-radius: 2rem;
+}
+
+.retardo {
+    border: 2px solid rgb(184, 184, 26);
+    border-radius: 2rem;
+}

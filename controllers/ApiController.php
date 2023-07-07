@@ -38,9 +38,16 @@
         }
 
         public static function traerRegistro(){
-            $registro = Huella::ultimoRegistro();
-            if($registro){
-                echo json_encode($registro);
+            $registro = Asistencia::ultimoRegistro();
+
+            $asistencia = reset($registro); // Obtén el primer elemento del array y conviértelo en un objeto
+
+            $huella = Huella::find($asistencia->id_empleado);
+            
+            $empleado = Empleado::find($huella->id_empleado);
+
+            if($empleado){
+                echo json_encode($empleado);
 
             }else {
                 echo "Hubo un error..";

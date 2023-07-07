@@ -8,7 +8,6 @@
         public $id;
         public $nombre;
         public $id_huella;
-        public $verificado;
         public $hora_entrada;
 
         public function __construct($args = []){

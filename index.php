@@ -30,6 +30,7 @@
                 <img src="public/build/img/plazas.png" alt="plazas.png">
                 <p>Plazas</p>
             </button>
+            <a href="/HuDi/detector-asistencia/asistencia.php">Plazas</a>
         </div>
     </div>
 

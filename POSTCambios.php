@@ -3,8 +3,8 @@
 require 'includes/app.php';
 
 use Controllers\ApiController;
-use Model\Cambios;
+use Model\Sensor;
 
-$cambios = new Cambios($_POST);
+$cambios = new Sensor($_POST);
 $cambios->actualizar();
 

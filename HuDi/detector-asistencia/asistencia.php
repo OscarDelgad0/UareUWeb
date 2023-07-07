@@ -1,3 +1,6 @@
+<?php include '../base/header.php' ?>
+
+
 <h2>Asistencia</h2>
 
 <div class="contenedor-grid">
@@ -9,7 +12,7 @@
     </div>
 
     <div class="opciones-menu">
-        <img src="public/build/img/huella.webp" alt="">
+        <img src="../../public/build/img/huella.webp" alt="">
     </div>
 
     <div class="sensor-data">
@@ -28,31 +31,18 @@
                             <p class="hora-card-asistencia"></p>
                         </div>
                         <div class="opciones-menu">
-                            <img src="public/build/img/Personal.png" alt="">
+                            <img src="../../public/build/img/Personal.png" alt="">
                         </div>
-    </div>
-<div class="ventana atiempo visible">
-    <div class="contenedor-grid">
-                     <div class="opciones/menu">
-                            <p>Bienvenido(a)</p>
-                            <p> estas a tiempo</p>
-                            <p>continua asi</p>
-                        </div>
-                        <div class="opciones/menu">
-                            <img src="public/build/img/comprobado.png" alt="">
-                        </div>
+                     
     </div>
 
-<div class="ventana tarde visible">
     <div class="contenedor-grid">
-                 <div class="card-empleado-asistencia">
-                    <p>Bienvenido(a)</p>
-                    <p>has llegado tarde</p>
-                    <p>hoy no podremos recibirte</p>
-                 </div>
-            <div class="card-empleado-asistencia">
-              <img src="public/build/img/cancelar.png" alt="">
-            </div>
+        <div class="notificacion-asistencia-contenedor">
+                            <p class="notificacion-asistencia"></p>
+        </div>
     </div>
+
  </div> <!-- card empleado -->
- <script src="public/build/js/app.js"></script>
+ <script src="../../public/build/js/app.js"></script>
+
+ <?php include '../base/footer.php' ?>
