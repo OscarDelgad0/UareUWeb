@@ -1,4 +1,4 @@
 <?php
     require 'includes/app.php';
     use Controllers\ApiController;
-    ApiController::enviarHuellas();
+    ApiController::ultimaHuella();

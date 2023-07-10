@@ -30,6 +30,18 @@ async function consultarAPIActualizacion() {
       console.log(error);
   }
 }
+
+async function consultarAPIHuella() {
+  // Muestra informacion de la BD si el sensor o al web hicieron cambios
+  try {
+      const url = 'http://localhost:3000/APISensor.php';
+      const resultado = await fetch(url);
+      const sensor = await resultado.json();
+      return sensor;
+  } catch (error) {
+      console.log(error);
+  }
+}
 async function consultarAPIAsistencia() {
   // Consultar la ultima asistencia registrada
   try {
@@ -296,10 +308,10 @@ async function actualizarEmpleados(cambios){
     }
 }
 
-function verificador(){
-    setInterval(sensor, 2000);
-}
+// function verificador(){
+//     setInterval(sensor, 2000);
+// }
 
-setTimeout(verificador, 5000);
+// setTimeout(verificador, 5000);
 
 

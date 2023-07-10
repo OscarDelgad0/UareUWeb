@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   async function consultarUltimaHuella() {
     try {
-        const url = 'http://localhost:3000/APIUltimaHuella.php';
+        const url = 'http://localhost:3000/APIEnviarHuella.php';
         const resultado = await fetch(url);
         const empleados = await resultado.json();
         return empleados;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         const {id, nombre, id_huella}  = empleado
         console.log(id_huella);
-        if(id_huella){
+        if(id_huella != 0 && id_huella != null){
 
         }else {
           const option = document.createElement('OPTION');
@@ -55,6 +55,7 @@ async function colocarHuella(){
   const fechaTexto = document.querySelector('.fecha');
   const horaTexto = document.querySelector('.hora');
   const inputValue = document.querySelector('.id-huella');
+  const inputValues = document.querySelector('.id-empleado');
   const {id, id_empleado, fecha_creacion, hora_creacion} = huella[0];
 
   if(id_empleado) {
@@ -64,10 +65,11 @@ async function colocarHuella(){
     fechaTexto.textContent = fecha_creacion;
     horaTexto.textContent = hora_creacion;
     inputValue.value = id;
+    inputValues.value = id;
 
   }
 }
 
-// function verificador(){
-//     setInterval(colocarHuella, 1000);
-// }
+function verificador(){
+    setInterval(colocarHuella, 1000);
+}

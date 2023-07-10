@@ -13,7 +13,7 @@
         public function __construct($args = []){
             $this->id = $args['id'] ?? null;
             $this->nombre = $args['nombre'] ?? ''; 
-            $this->id_huella = $args['id_huella'] ?? ''; 
+            $this->id_huella = $args['id_huella'] ?? null; 
             $this->hora_entrada = $args['hora_entrada'] ?? null;
         }
     }

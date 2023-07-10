@@ -53,4 +53,17 @@
                 echo "Hubo un error..";
             }
         }
+
+        public static function ultimaHuella(){
+            $registro = Huella::huella();
+
+            
+            if($registro){
+                echo json_encode($registro);
+
+            }else {
+                echo "Hubo un error..";
+            }
+
+        }
     }

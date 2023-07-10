@@ -40,6 +40,15 @@
             return $resultado;
         }
 
+        public static function huella(){
+            $query = "SELECT *
+            FROM huella
+            ORDER BY id DESC
+            LIMIT 1";
+
+            $resultado = self::consultarSQL($query);
+            return $resultado;
+        }
         public static function ultimoRegistro(){
             $query = "SELECT a.id, a.fecha_asistencia, a.hora_asistencia, h.id_empleado, h.id, e.hora_entrada, e.nombre
             FROM asistencia a

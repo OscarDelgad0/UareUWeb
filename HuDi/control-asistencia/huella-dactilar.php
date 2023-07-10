@@ -5,7 +5,7 @@
 
 <div class="contenedor-grid huella-detector">
         <div class="opciones-menu">
-            <button>Activar huella dactilar</button>
+            <button>inciar proceso de registro</button>
 
             <div class="informacion-detector-huella">
 
@@ -35,10 +35,21 @@
                         <select name="empleado[id]" id="empleado";>
                              <option selected value="" >-- Seleccione --</option>
                          </select>
-
+                         
                          <input type="hidden" value="" class="id-huella" name="huella[id]">
 
                     <input type="submit" value="Guardar huella" class="boton-huella">
+                </fieldset>
+            </form>
+
+            <form class="formulario" method="POST" enctype="multipart/form-data" action="../../GuardarE.php">
+                <fieldset>
+                    <legend>Empleados</legend>
+                         <label for="nombre">nombre </label>
+                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">   
+                         <input type="hidden" value="" class="id-empleado" name="id_huella">           
+
+                    <input type="submit" value="Guardar empleado" class="boton-huella">
                 </fieldset>
             </form>
         </div>
