@@ -47,8 +47,9 @@
                     <legend>Empleados</legend>
                          <label for="nombre">nombre </label>
                          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">   
-                         <input type="hidden" value="" class="id-empleado" name="id_huella">           
-
+                         <input type="hidden" value="null" name="id_huella" >           
+                         <label for="hora">Selecciona una hora:</label>
+                        <input type="time" id="hora" name="hora_entrada">
                     <input type="submit" value="Guardar empleado" class="boton-huella">
                 </fieldset>
             </form>

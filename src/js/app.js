@@ -308,10 +308,10 @@ async function actualizarEmpleados(cambios){
     }
 }
 
-// function verificador(){
-//     setInterval(sensor, 2000);
-// }
+function verificador(){
+    setInterval(sensor, 2000);
+}
 
-// setTimeout(verificador, 5000);
+setTimeout(verificador, 5000);
 
 

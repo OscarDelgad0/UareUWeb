@@ -28,11 +28,57 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
 
+  async function consultarAPIActualizacion() {
+    // Muestra informacion de la BD si el sensor o al web hicieron cambios
+    try {
+        const url = 'http://localhost:3000/APISensor.php';
+        const resultado = await fetch(url);
+        const sensor = await resultado.json();
+        return sensor;
+    } catch (error) {
+        console.log(error);
+    }
+  }
 
+
+  async function actualizaRegistro(sensor){
+    const datos = new FormData();
+  
+    for (const campo in sensor[0]) {
+        datos.append(campo, sensor[0][campo]);
+    }
+    datos.append('status_registro', 1);  
+  
+    try {
+      // Petición hacia la api
+      const url = 'http://localhost:3000/POSTCambios.php';
+      const respuesta = await fetch(url, {
+          method: 'POST',
+          body: datos
+      });
+      const resultado = await respuesta.json();
+      } catch (error) {
+        
+      }
+  
+  }
   async function colocarEmpleados(){
+    const sensor = await consultarAPIActualizacion();
+    var res1 = parseInt(sensor[0].status_registro);;
+    var status_registro = Boolean(res1);
+
+    console.log(status_registro);
+    console.log("Despues de status");
+
+    if(status_registro){
+
+    }else {
+      actualizaRegistro(sensor);
+    }
+
     const empleados = await consultarAPIEmpleados();
     const inputEmpleados = document.querySelector('#empleado');
-    
+    console.log(empleados);
     empleados.forEach( empleado => {
 
         const {id, nombre, id_huella}  = empleado
@@ -70,6 +116,6 @@ async function colocarHuella(){
   }
 }
 
-function verificador(){
-    setInterval(colocarHuella, 1000);
-}
+// function verificador(){
+//     setInterval(colocarHuella, 1000);
+// }
