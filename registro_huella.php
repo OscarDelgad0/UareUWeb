@@ -1,7 +1,22 @@
 <?php 
-    include '../base/header.php';
+    require 'includes/app.php';
 ?>
-<h2>Huellas dactilares</h2>
+ <!-- INDEX PRINCIPAL -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistencia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="public/build/css/app.css">
+</head>
+<body>
+
+    <div class="contenedor-app">
+        <div class="contenedor-menu">
+        <h2>Huellas dactilares</h2>
 
 <div class="contenedor-grid huella-detector">
         <div class="opciones-menu">
@@ -60,4 +75,10 @@
         </div>
 </div>
 
-<?php include '../base/footer.php'; ?>
+        </div> 
+    </div>
+    <script src="public/build/js/ventana.js"></script>
+    <script src="public/build/js/registro.js"></script>
+    <script src="public/build/js/app.js"></script>
+</body>
+</html>

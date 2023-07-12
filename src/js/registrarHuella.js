@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   async function consultarAPIEmpleados() {
     try {
-        const url = 'http://localhost:3000/APIEnviarEmpleados.php';
+        const url = 'https://funerariaslatinoamericana.com/asistencia/APIEnviarEmpleados.php';
         const resultado = await fetch(url);
         const empleados = await resultado.json();
         return empleados;
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   async function consultarUltimaHuella() {
     try {
-        const url = 'http://localhost:3000/APIEnviarHuella.php';
+        const url = 'https://funerariaslatinoamericana.com/asistencia/APIEnviarHuella.php';
         const resultado = await fetch(url);
         const empleados = await resultado.json();
         return empleados;
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function(){
   async function consultarAPIActualizacion() {
     // Muestra informacion de la BD si el sensor o al web hicieron cambios
     try {
-        const url = 'http://localhost:3000/APISensor.php';
+        const url = 'https://funerariaslatinoamericana.com/asistencia/APISensor.php';
         const resultado = await fetch(url);
         const sensor = await resultado.json();
         return sensor;
@@ -48,10 +48,11 @@ document.addEventListener('DOMContentLoaded', function(){
         datos.append(campo, sensor[0][campo]);
     }
     datos.append('status_registro', 1);  
+    datos.append('status_asistencia', 0);  
   
     try {
       // Petición hacia la api
-      const url = 'http://localhost:3000/POSTCambios.php';
+      const url = 'https://funerariaslatinoamericana.com/asistencia/POSTCambios.php';
       const respuesta = await fetch(url, {
           method: 'POST',
           body: datos
@@ -67,14 +68,23 @@ document.addEventListener('DOMContentLoaded', function(){
     var res1 = parseInt(sensor[0].status_registro);;
     var status_registro = Boolean(res1);
 
-    console.log(status_registro);
-    console.log("Despues de status");
+    var res2 = parseInt(sensor[0].status_asistencia);;
+    var status_asistencia = Boolean(res2);
+
+
 
     if(status_registro){
+      console.log("Sin cambios");
+     }
 
-    }else {
+     if(!status_registro){
       actualizaRegistro(sensor);
-    }
+     }
+
+     
+     if(status_registro && status_asistencia){
+      actualizaRegistro(sensor);
+     }
 
     const empleados = await consultarAPIEmpleados();
     const inputEmpleados = document.querySelector('#empleado');

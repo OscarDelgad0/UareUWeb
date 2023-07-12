@@ -19,18 +19,17 @@
         <h2>Sistema de control de asistencia</h2>
     <div class="contenedor-grid">
         <div class="opciones-menu">
-           <a href="HuDi/control-asistencia.php">
+           <a href="registro_huella.php">
                <img src="public/build/img/Programador.png" alt="">
                <p>Administrador</p>
            </a>
             </button>
         </div>
         <div class="opciones-menu">
-            <button type="button" class="boton-control" data-paso="2">
-                <img src="public/build/img/plazas.png" alt="plazas.png">
-                <p>Plazas</p>
-            </button>
-            <a href="/HuDi/detector-asistencia/asistencia.php">Plazas</a>
+              <a href="asistencia_inicio.php">
+                    <img src="public/build/img/plazas.png" alt="plazas.png">
+                    <p>Plazas</p>
+                </a>
         </div>
     </div>
 

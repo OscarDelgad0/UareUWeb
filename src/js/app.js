@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 async function consultarAPIEmpleados() {
   try {
-      const url = 'http://localhost:3000/APIEnviarEmpleados.php';
+      const url = 'https://funerariaslatinoamericana.com/asistencia/APIEnviarEmpleados.php';
       const resultado = await fetch(url);
       const empleados = await resultado.json();
       return empleados;
@@ -22,7 +22,7 @@ async function consultarAPIEmpleados() {
 async function consultarAPIActualizacion() {
   // Muestra informacion de la BD si el sensor o al web hicieron cambios
   try {
-      const url = 'http://localhost:3000/APISensor.php';
+      const url = 'https://funerariaslatinoamericana.com/asistencia/APISensor.php';
       const resultado = await fetch(url);
       const sensor = await resultado.json();
       return sensor;
@@ -34,7 +34,7 @@ async function consultarAPIActualizacion() {
 async function consultarAPIHuella() {
   // Muestra informacion de la BD si el sensor o al web hicieron cambios
   try {
-      const url = 'http://localhost:3000/APISensor.php';
+      const url = 'https://funerariaslatinoamericana.com/asistencia/APISensor.php';
       const resultado = await fetch(url);
       const sensor = await resultado.json();
       return sensor;
@@ -45,7 +45,7 @@ async function consultarAPIHuella() {
 async function consultarAPIAsistencia() {
   // Consultar la ultima asistencia registrada
   try {
-      const url = 'http://localhost:3000/APIUltimaHuella.php';
+      const url = 'https://funerariaslatinoamericana.com/asistencia/APIUltimaHuella.php';
       const resultado = await fetch(url);
       const asistencia = await resultado.json();
       return asistencia;
@@ -94,12 +94,16 @@ async function sensor(){
 
     //  actualizarMenuAsistencia();
     //  actualizarAsistencia(sensor);
-     if(status_asistencia){
+     if(status_asistencia && !status_registro){
       console.log("Sin cambios");
      }
 
      if(!status_asistencia){
       actualizarMenuAsistencia();
+      actualizarAsistencia(sensor);
+     }
+
+     if(status_asistencia && status_registro){
       actualizarAsistencia(sensor);
      }
      
@@ -145,10 +149,10 @@ async function actualizarAsistencia(sensor){
       datos.append(campo, sensor[0][campo]);
   }
   datos.append('status_asistencia', 1);  
-
+  datos.append('status_registro', 0);  
   try {
     // Petición hacia la api
-    const url = 'http://localhost:3000/POSTCambios.php';
+    const url = 'https://funerariaslatinoamericana.com/asistencia/POSTCambios.php';
     const respuesta = await fetch(url, {
         method: 'POST',
         body: datos
@@ -297,7 +301,7 @@ async function actualizarEmpleados(cambios){
   datos.append('actualizacion', 'last');
   try {
     // Petición hacia la api
-    const url = 'http://localhost:3000/POSTCambios.php';
+    const url = 'https://funerariaslatinoamericana.com/asistencia/POSTCambios.php';
     const respuesta = await fetch(url, {
         method: 'POST',
         body: datos

@@ -7,6 +7,6 @@
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $empleado =  new Empleado($_POST);
             $empleado->guardar();
-            header('Location: HuDi/control-asistencia/huella-dactilar.php');
+            header('Location: https://funerariaslatinoamericana.com/asistencia/registro_huella.php');
         //    $cambios = new Huella($_POST);
 }
